@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/selector.gd" type="Script" id=1]
+[ext_resource path="res://assets/grass.png" type="Texture" id=2]
+[ext_resource path="res://assets/placeModes.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 15 )
+
+[node name="selector" type="Area2D" groups=[
+"cursor",
+]]
+script = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="appear" type="ColorRect" parent="."]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_pivot_offset = Vector2( 16, 16 )
+rect_clip_content = true
+color = Color( 0.75, 0.75, 0.75, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="cursorUp" type="Area2D" parent="."]
+position = Vector2( 0, -32 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="cursorUp"]
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="cursorRight" type="Area2D" parent="."]
+position = Vector2( 32, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="cursorRight"]
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="cursorDown" type="Area2D" parent="."]
+position = Vector2( 0, 32 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="cursorDown"]
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="cursorLeft" type="Area2D" parent="."]
+position = Vector2( -32, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="cursorLeft"]
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="selectedblock" type="Sprite" parent="."]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.8, 0.8 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 2 )
+centered = false
+
+[node name="actualPlaceMode" type="Sprite" parent="selectedblock"]
+position = Vector2( 27.25, 28.5 )
+scale = Vector2( 2.75, 2.75 )
+texture = ExtResource( 3 )
+hframes = 2

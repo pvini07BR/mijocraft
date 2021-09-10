@@ -1,0 +1,222 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/nokiafc22.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/gameFont.tres" type="DynamicFont" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+size = 150
+outline_size = 20
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+resource_local_to_scene = true
+size = 30
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+resource_local_to_scene = true
+size = 40
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+resource_local_to_scene = true
+size = 40
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+resource_local_to_scene = true
+size = 40
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 52.0
+margin_top = 38.0
+margin_right = 972.0
+margin_bottom = 562.0
+custom_constants/separation = 35
+
+[node name="title" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 920.0
+margin_bottom = 188.0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 1 )
+text = "mijocraft."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 223.0
+margin_right = 920.0
+margin_bottom = 433.0
+custom_constants/vseparation = 15
+custom_constants/hseparation = 15
+columns = 2
+
+[node name="nickText" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 11.0
+margin_right = 194.0
+margin_bottom = 49.0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 2 )
+text = "Nickname:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nick" type="LineEdit" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 209.0
+margin_right = 909.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 700, 0 )
+custom_fonts/font = SubResource( 3 )
+align = 1
+context_menu_enabled = false
+shortcut_keys_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ipText" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 86.0
+margin_right = 194.0
+margin_bottom = 124.0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 2 )
+text = "IP Adress:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ip" type="LineEdit" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 209.0
+margin_top = 75.0
+margin_right = 909.0
+margin_bottom = 135.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+context_menu_enabled = false
+shortcut_keys_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="portText" type="Label" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_top = 161.0
+margin_right = 194.0
+margin_bottom = 199.0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 2 )
+text = "Port:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="port" type="LineEdit" parent="CenterContainer/VBoxContainer/GridContainer"]
+margin_left = 209.0
+margin_top = 150.0
+margin_right = 909.0
+margin_bottom = 210.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+context_menu_enabled = false
+shortcut_keys_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 468.0
+margin_right = 920.0
+margin_bottom = 524.0
+custom_fonts/font = SubResource( 4 )
+text = "play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1024.0
+margin_top = -600.0
+margin_right = -1024.0
+margin_bottom = -600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="bg" type="ColorRect" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Popup"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -271.0
+margin_top = 72.0
+margin_right = 284.0
+margin_bottom = 175.0
+custom_fonts/font = SubResource( 5 )
+text = "You have been kicked.
+Reason:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Popup"]
+anchor_left = 0.522
+anchor_top = 1.0
+anchor_right = 0.522
+anchor_bottom = 1.0
+margin_left = -64.528
+margin_top = -122.0
+margin_right = 64.472
+margin_bottom = -59.0001
+custom_fonts/font = ExtResource( 3 )
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_changed" from="CenterContainer/VBoxContainer/GridContainer/nick" to="." method="_on_nick_text_changed"]
+[connection signal="text_entered" from="CenterContainer/VBoxContainer/GridContainer/nick" to="." method="_on_nick_text_entered"]
+[connection signal="text_entered" from="CenterContainer/VBoxContainer/GridContainer/ip" to="." method="_on_nick_text_entered"]
+[connection signal="text_entered" from="CenterContainer/VBoxContainer/GridContainer/port" to="." method="_on_nick_text_entered"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/playButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Popup/Button" to="." method="_on_Ok_pressed"]
