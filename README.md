@@ -1,2 +1,2 @@
 # mijocraft
-it has a lot of bugs though.
+REWRITTING THE ENTIRE GAME!!!!!!11111111111111111
